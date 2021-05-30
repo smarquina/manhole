@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use Dingo\Api\Routing\Router;
+
+/** @var \Dingo\Api\Routing\Router $api */
+$api = app(Router::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+$api->version('v1', ['namespace' => '', 'middleware' => ['api']], function ($api) {
+
+    /** @var \Dingo\Api\Routing\Router $api */
+    // Public Routes
+    $api->group(array('prefix' => 'manhole_cover', 'as' => 'manhole', 'namespace' => 'Manhole\Http\Controllers'), function ($api) {
+        $api->get('health-check', 'ManholeController@hi')->name('hi');
+
+    });
+
 });
