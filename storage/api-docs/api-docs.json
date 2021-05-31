@@ -1,0 +1,118 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Manhole API",
+        "description": "Simple API for Manhole build.",
+        "contact": {
+            "email": "sergyzen@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "",
+            "description": "Simple API for Manhole build."
+        }
+    ],
+    "paths": {
+        "/api/manhole_cover/build": {
+            "post": {
+                "tags": [
+                    "manhole"
+                ],
+                "summary": "Store new manhole cover",
+                "description": "Build new manhole cover.",
+                "operationId": "buildManholeCover",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "material": {
+                                        "description": "Choices: {iron,steel,stone}",
+                                        "type": "string",
+                                        "nullable": false
+                                    },
+                                    "radio": {
+                                        "description": "Build new manhole cover.",
+                                        "type": "number",
+                                        "nullable": false
+                                    },
+                                    "decoration": {
+                                        "description": "Build new manhole cover.",
+                                        "type": "boolean",
+                                        "nullable": false
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/components/schemas/Manhole"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Request invalid. see errors"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Manhole": {
+                "description": "Class ManholeResource",
+                "properties": {
+                    "guid": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "radio": {
+                        "type": "number",
+                        "nullable": false
+                    },
+                    "material": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "decoration": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "size": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "manhole",
+            "description": "List and build manhole"
+        }
+    ],
+    "security": [
+        []
+    ]
+}

@@ -2,10 +2,15 @@
     "name": "smarquina/driver-manhole",
     "type": "project",
     "description": "Simple example manhole api.",
-    "keywords": ["API", "Hexagonal", "laravel"],
+    "keywords": [
+        "API",
+        "Hexagonal",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "ext-pdo": "*",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -30,7 +35,10 @@
             "Database\\Seeders\\": "database/seeders/",
             "Manhole\\": "app/Manhole/",
             "Shared\\": "app/Shared/"
-        }
+        },
+        "files": [
+            "app/Shared/Helpers/appHelper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

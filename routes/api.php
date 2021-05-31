@@ -20,9 +20,10 @@ $api->version('v1', ['namespace' => '', 'middleware' => ['api']], function ($api
 
     /** @var \Dingo\Api\Routing\Router $api */
     // Public Routes
-    $api->group(array('prefix' => 'manhole_cover', 'as' => 'manhole', 'namespace' => 'Manhole\Http\Controllers'), function ($api) {
+    $api->group(array('prefix' => 'manhole_cover', 'as' => 'manhole', 'namespace' => 'Manhole\Infrastructure\Controllers'), function ($api) {
         $api->get('health-check', 'ManholeController@hi')->name('hi');
 
+        $api->post('build', 'ManholeController@buildManholeCover')->name('build');
     });
 
 });

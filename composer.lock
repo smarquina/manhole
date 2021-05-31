@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "68527c5f6e5a59b012f6358634f8e653",
+    "content-hash": "362314c38ff6531edd75ca806fdf37d1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -200,7 +200,7 @@
             ],
             "support": {
                 "issues": "https://github.com/dingo/api/issues",
-                "source": "https://github.com/dingo/api/tree/master"
+                "source": "https://github.com/dingo/api/tree/v3.0.7"
             },
             "time": "2021-05-02T12:17:42+00:00"
         },
@@ -8604,7 +8604,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3|^8.0"
+        "php": "^7.3|^8.0",
+        "ext-pdo": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

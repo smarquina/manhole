@@ -4,7 +4,7 @@
 namespace Shared\Services;
 
 
-use Shared\Repositories\RepositoryContract;
+use Shared\Domain\Repositories\RepositoryContract;
 
 abstract class BaseService implements ServiceContract {
 
