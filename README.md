@@ -29,6 +29,8 @@ If you have used Docker default configuration, it will be available in [http://l
 
 ## TODOS ⚠
 - Testing
+- Command bus
+- EloquentModel - DomainModel adapter
 
 ## Vulnerabilities & contributions
 
